@@ -6,18 +6,18 @@
   --paper:#F6F7F6; --card:#FFFFFF; --ink:#1B2223; --dim:#5E6A68; --line:#D7DDDB; --line2:#C3CBC9; --soft:#EEF1F0;
   --accent:#20706C; --accent-ink:#FFFFFF; --accent-soft:#E3EEEC; --ok:#2E7D4F; --bad:#B3261E;
   --duo:#B7C0BE; --new:#F2C200; --new-ink:#2B2300; --new-soft:#FFF5C7;
-  --qa:#1F5FAD; --qa-soft:#E3EDFA; --qb:#9A2E7D; --qb-soft:#F7E3F1;
+  --qa:#1F5FAD; --qa-soft:#E3EDFA; --qb:#9A2E7D; --qb-soft:#F7E3F1; --delta:#1E7B3C;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --paper:#151A1B; --card:#1E2526; --ink:#E6EBEA; --dim:#9AA7A5; --line:#2E3839; --line2:#3C4849; --soft:#232B2C;
   --accent:#5DBBB4; --accent-ink:#0F1F1E; --accent-soft:#1F3331; --ok:#5FBF87; --bad:#F08A80;
   --duo:#4A5657; --new:#F5D04A; --new-ink:#211B02; --new-soft:#3A3212;
-  --qa:#7DB2F2; --qa-soft:#1B2A3D; --qb:#E58BCB; --qb-soft:#3A2033; color-scheme:dark}}
+  --qa:#7DB2F2; --qa-soft:#1B2A3D; --qb:#E58BCB; --qb-soft:#3A2033; --delta:#5CCB82; color-scheme:dark}}
 :root[data-theme="dark"]{
   --paper:#151A1B; --card:#1E2526; --ink:#E6EBEA; --dim:#9AA7A5; --line:#2E3839; --line2:#3C4849; --soft:#232B2C;
   --accent:#5DBBB4; --accent-ink:#0F1F1E; --accent-soft:#1F3331; --ok:#5FBF87; --bad:#F08A80;
   --duo:#4A5657; --new:#F5D04A; --new-ink:#211B02; --new-soft:#3A3212;
-  --qa:#7DB2F2; --qa-soft:#1B2A3D; --qb:#E58BCB; --qb-soft:#3A2033; color-scheme:dark}
+  --qa:#7DB2F2; --qa-soft:#1B2A3D; --qb:#E58BCB; --qb-soft:#3A2033; --delta:#5CCB82; color-scheme:dark}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
@@ -48,7 +48,7 @@ th{font-weight:600;background:var(--soft);font-size:.8rem}
 tbody tr:last-child td{border-bottom:0}
 td.num,th.num{text-align:right;white-space:nowrap}
 table th.num{white-space:normal;font-family:inherit;vertical-align:bottom}
-.hs{display:block;font-weight:500;font-size:.72rem;color:var(--dim)}
+.hs{display:block;font-weight:600;font-size:.72rem;color:inherit}
 .sm{display:none}
 th.ctr,td.ctr{text-align:center}
 tr.total td{font-weight:700;border-top:2px solid var(--line2)}
@@ -75,7 +75,7 @@ td.ins{white-space:nowrap}td.ins .b{color:var(--dim)}
 .btns{display:flex;flex-wrap:wrap;gap:.45rem}
 .pm{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.3rem;text-align:right;font-family:ui-monospace,Menlo,Consolas,monospace;font-variant-numeric:tabular-nums;font-size:.9rem}
 .xr.h .pm{font-family:inherit}
-.pm .hi{font-weight:700}.pm .hi.qa,.pm .d.qa{color:var(--qa)}.pm .hi.qb,.pm .d.qb{color:var(--qb)}.pm .d{font-weight:700}
+.pm .hi{font-weight:700}.pm .hi.qa{color:var(--qa)}.pm .hi.qb{color:var(--qb)}.pm .d,.pm .dh{font-weight:700;color:var(--delta)}
 .pm.ph,.mlab,.badge{display:none}
 @media (max-width:70rem){
   .xr.h{display:none}
@@ -241,15 +241,15 @@ function big(src, dur, label, who, opts = {}) {
 // ---------- examples tab: one table with every example
 function examplesTable() {
   const root = document.getElementById("t-all");
-  const sub = `<div class="pm"><span>${XA}</span><span>${XB}</span><span>Δ</span></div>`;
+  const sub = `<div class="pm"><span>${XA}</span><span>${XB}</span><span class="dh">Δ</span></div>`;
   root.innerHTML = `<div class="xr h"><div class="c-num">#</div><div class="c-ins">Player A · Player B</div><div class="c-duo">Duo</div>
     <div class="c-xa" style="color:var(--qa)">${XA}<br>continues A</div><div class="c-xb" style="color:var(--qb)">${XB}<br>responds to B</div>
     <div class="c-self"><div class="ctr">PMus-Self</div>${sub}</div><div class="c-partner"><div class="ctr">PMus-Partner</div>${sub}</div></div>`;
   EX.forEach(e => {
     const p = e.pmus["5"], row = document.createElement("div"); row.className = "xr";
     const pm = (m, cls) => { const v = p[m];
-      return `<div class="pm ph"><span>${XA}</span><span>${XB}</span><span>Δ</span></div>
-        <div class="pm"><span class="${v.XA > v.XB ? "hi qa" : ""}">${v.XA.toFixed(3)}</span><span class="${v.XB > v.XA ? "hi qb" : ""}">${v.XB.toFixed(3)}</span><span class="d ${v.diff > 0 ? cls : ""}">${sgn(v.diff, 3)}</span></div>`; };
+      return `<div class="pm ph"><span>${XA}</span><span>${XB}</span><span class="dh">Δ</span></div>
+        <div class="pm"><span class="${v.XA > v.XB ? "hi qa" : ""}">${sgn(v.XA, 3)}</span><span class="${v.XB > v.XA ? "hi qb" : ""}">${sgn(v.XB, 3)}</span><span class="d">${sgn(v.diff, 3)}</span></div>`; };
     row.innerHTML = `<div class="c-num">${e.ex}</div>
       <div class="c-ins"><span class="badge">${e.ex}</span>${esc(e.A)} <span class="b">· ${esc(e.B)}</span></div>
       <div class="c-duo"><span class="mlab">Duo</span><div class="btns"></div></div>
@@ -315,7 +315,7 @@ function renderReveal(e) {
   const verdict = picked ? `<p><b>Track ${s.answer} = ${picked === "XA" ? XA : XB}</b> · <span class="${picked === q.target ? "ok" : "bad"}">${picked === q.target ? "as constructed" : "not as constructed"}</span></p>` : "";
   const rows = [["Self", "XA"], ["Partner", "XB"], ["Partner+", "XB"], ["Duo", null]];
   const pm = `<div class="tw"><table><thead><tr><th>PMus</th><th class="num qa">${XA}</th><th class="num qb">${XB}</th></tr></thead><tbody>
-    ${rows.map(([m]) => { const v = e.pmus["5"][m]; return `<tr><td>PMus-${m}</td><td class="num ${v.XA > v.XB ? "hi qa" : ""}">${v.XA.toFixed(3)}</td><td class="num ${v.XB > v.XA ? "hi qb" : ""}">${v.XB.toFixed(3)}</td></tr>`; }).join("")}</tbody></table></div>`;
+    ${rows.map(([m]) => { const v = e.pmus["5"][m]; return `<tr><td>PMus-${m}</td><td class="num ${v.XA > v.XB ? "hi qa" : ""}">${sgn(v.XA, 3)}</td><td class="num ${v.XB > v.XA ? "hi qb" : ""}">${sgn(v.XB, 3)}</td></tr>`; }).join("")}</tbody></table></div>`;
   document.getElementById("revealed").innerHTML = `<div class="revealed">${verdict}
     <dl class="kv"><dt>Duo</dt><dd>${esc(e.past)}</dd><dt style="color:var(--qa)">${XA}</dt><dd>${esc(e.xa)}</dd><dt style="color:var(--qb)">${XB}</dt><dd>${esc(e.xb)}</dd></dl>
     ${pm}
