@@ -58,40 +58,31 @@ td.ins{white-space:nowrap}td.ins .b{color:var(--dim)}
 .cell{display:flex;gap:.3rem;flex-wrap:nowrap}
 
 /* compact players (examples table) */
-.mini{--p:0%;display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--line2);border-radius:999px;padding:.4rem 1rem .4rem .4rem;min-height:2.75rem;cursor:pointer;white-space:nowrap;font-size:1rem;font-weight:600;
+.mini{--p:0%;display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--line2);border-radius:999px;padding:.4rem .8rem .4rem .4rem;min-height:2.75rem;cursor:pointer;white-space:nowrap;font-size:1rem;font-weight:600;
   background:linear-gradient(90deg,var(--accent-soft) var(--p),var(--card) var(--p))}
 .mini .ico{display:inline-flex;align-items:center;justify-content:center;width:1.9rem;height:1.9rem;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-size:.8rem;flex:none}
 .mini.playing{border-color:var(--accent)}.mini.playing .ico{background:var(--ink);color:var(--paper)}
 .mini.qa{border-color:color-mix(in srgb,var(--qa) 55%,var(--line2))}.mini.qb{border-color:color-mix(in srgb,var(--qb) 55%,var(--line2))}
 
-/* examples: one row per example; aligned columns on wide screens, a card per example on narrow ones */
-.exs{border:1px solid var(--line);border-radius:10px;background:var(--card);overflow:hidden}
-.xr{display:grid;grid-template-columns:2.2rem minmax(7.5rem,1fr) minmax(17rem,1.3fr) 6.2rem 6.2rem minmax(12.5rem,1fr) minmax(12.5rem,1fr);gap:.5rem .6rem;align-items:center;padding:.6rem .8rem;border-bottom:1px solid var(--line)}
+/* examples: one table at every width; on narrow screens it scrolls sideways inside its box, the number column pinned */
+.exwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.exs{min-width:65rem}
+.xr .c-duo .btns{flex-wrap:nowrap}
+.xr{display:grid;grid-template-columns:2.2rem minmax(6.5rem,1fr) minmax(16.6rem,1.2fr) 5.4rem 5.4rem minmax(11.6rem,1fr) minmax(12.4rem,1fr);gap:.5rem .55rem;align-items:center;padding:.6rem .8rem;border-bottom:1px solid var(--line);background:var(--card)}
+.xr .c-num{position:sticky;left:0;z-index:1;background:inherit;align-self:stretch;display:flex;align-items:center;margin-left:-.8rem;padding-left:.8rem}
 .xr:last-child{border-bottom:0}
 .xr.h{background:var(--soft);font-size:.8rem;font-weight:600;align-items:end;padding-block:.5rem}
 .xr .c-num{font-weight:700;font-size:1.05rem}
 .xr .c-ins{font-size:.92rem}.xr .c-ins .b{color:var(--dim)}
 .xr .ctr{text-align:center;margin-bottom:.2rem}
 .btns{display:flex;flex-wrap:wrap;gap:.45rem}
-.pm{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;text-align:right;font-family:ui-monospace,Menlo,Consolas,monospace;font-variant-numeric:tabular-nums;font-size:.86rem}
+.pm{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;text-align:right;font-family:ui-monospace,Menlo,Consolas,monospace;font-variant-numeric:tabular-nums;font-size:.84rem}
 .xr.h .pm{font-family:inherit}
 .pm .hi{font-weight:700}.pm .d,.pm .dh{font-weight:700;color:var(--delta)}
 .pm>span{padding-inline:.45rem}.pm>span:first-child{padding-left:0}.pm>span+span{border-left:1px solid var(--line2)}
 .xr .c-partner{border-left:2px solid var(--line2);padding-left:.8rem}
 .pm.ph,.mlab,.badge{display:none}
-@media (max-width:72rem){
-  .xr.h{display:none}
-  .xr{grid-template-columns:1fr 1fr;grid-template-areas:"ins ins" "duo duo" "xa xb" "self partner";gap:.7rem 1rem;padding:.9rem .9rem 1rem}
-  .xr .c-num{display:none}
-  .c-ins{grid-area:ins;font-size:1rem!important}.c-duo{grid-area:duo}.c-xa{grid-area:xa}.c-xb{grid-area:xb}.c-self{grid-area:self}.c-partner{grid-area:partner}
-  .badge{display:inline-flex;align-items:center;justify-content:center;min-width:1.8rem;height:1.8rem;border-radius:999px;background:var(--accent-soft);font-weight:700;margin-right:.35rem}
-  .mlab{display:block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--dim);margin-bottom:.3rem}
-  .pm.ph{display:grid;font-family:inherit;font-size:.72rem;color:var(--dim)}
-  .pm{font-size:.86rem}
-}
 @media (max-width:32rem){
-  .xr{grid-template-areas:"ins ins" "duo duo" "xa xb" "self self" "partner partner"}
-  .xr .c-partner{border-left:0;padding-left:0}
   table th,table td{padding:.4rem .4rem}
   .lg{display:none}.sm{display:inline}
 }
@@ -162,7 +153,7 @@ td.ins{white-space:nowrap}td.ins .b{color:var(--dim)}
 <main class="wrap">
 
 <section id="examples" role="tabpanel">
-<div class="exs" id="t-all"></div>
+<div class="exwrap"><div class="exs" id="t-all"></div></div>
 </section>
 
 <section id="try" role="tabpanel" hidden>
