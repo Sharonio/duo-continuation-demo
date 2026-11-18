@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Continue A or Listen to B</title>
+<meta name="description" content="Anonymous supplementary material: a listening pilot on whether listeners and PMus separate continuing one's own line from responding to the partner.">
+<style>
+:root{
+  --paper:#F6F7F6; --card:#FFFFFF; --ink:#1B2223; --dim:#5E6A68; --line:#D7DDDB; --line2:#C3CBC9; --soft:#EEF1F0;
+  --accent:#20706C; --accent-ink:#FFFFFF; --accent-soft:#E3EEEC; --ok:#2E7D4F; --bad:#B3261E;
+  --duo:#B7C0BE; --new:#F2C200; --new-ink:#2B2300; --new-soft:#FFF5C7;
+  --qa:#1F5FAD; --qa-soft:#E3EDFA; --qb:#9A2E7D; --qb-soft:#F7E3F1;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#151A1B; --card:#1E2526; --ink:#E6EBEA; --dim:#9AA7A5; --line:#2E3839; --line2:#3C4849; --soft:#232B2C;
+  --accent:#5DBBB4; --accent-ink:#0F1F1E; --accent-soft:#1F3331; --ok:#5FBF87; --bad:#F08A80;
+  --duo:#4A5657; --new:#F5D04A; --new-ink:#211B02; --new-soft:#3A3212;
+  --qa:#7DB2F2; --qa-soft:#1B2A3D; --qb:#E58BCB; --qb-soft:#3A2033;}}
+:root[data-theme="dark"]{
+  --paper:#151A1B; --card:#1E2526; --ink:#E6EBEA; --dim:#9AA7A5; --line:#2E3839; --line2:#3C4849; --soft:#232B2C;
+  --accent:#5DBBB4; --accent-ink:#0F1F1E; --accent-soft:#1F3331; --ok:#5FBF87; --bad:#F08A80;
+  --duo:#4A5657; --new:#F5D04A; --new-ink:#211B02; --new-soft:#3A3212;
+  --qa:#7DB2F2; --qa-soft:#1B2A3D; --qb:#E58BCB; --qb-soft:#3A2033;}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+.mono,td.num,th.num{font-family:ui-monospace,Menlo,Consolas,monospace;font-variant-numeric:tabular-nums}
+button{font:inherit;color:inherit}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+a{color:var(--accent)}
+h1,h2,h3{text-wrap:balance;line-height:1.25}
+header.top{border-bottom:1px solid var(--line);background:var(--card)}
+header.top .in{max-width:60rem;margin:0 auto;padding:1.4rem 16px 1rem}
+header.top h1{margin:0 0 .3rem;font-size:1.45rem}
+header.top p{margin:0;color:var(--dim)}
+nav.toc{position:sticky;top:0;z-index:10;background:var(--paper);border-bottom:1px solid var(--line)}
+nav.toc .in{max-width:60rem;margin:0 auto;padding:.45rem 16px;display:flex;gap:.3rem 1.1rem;flex-wrap:wrap;font-size:.9rem}
+nav.toc a{text-decoration:none;color:var(--ink)}nav.toc a:hover{color:var(--accent)}
+main{max-width:60rem;margin:0 auto;padding:0 16px 5rem}
+section.part{padding-top:1.6rem}
+section.part>h2{font-size:1.2rem;margin:0 0 .6rem;padding-bottom:.3rem;border-bottom:1px solid var(--line)}
+h3{font-size:1rem;margin:1.2rem 0 .4rem}
+p{margin:.45rem 0}
+.dim{color:var(--dim)}
+.small{font-size:.86rem}
+.box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.8rem 1rem;margin:.7rem 0}
+.callout{border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:6px;padding:.55rem .85rem;margin:.7rem 0}
+ul.tight{margin:.3rem 0;padding-left:1.2rem}ul.tight li{margin:.15rem 0}
+.qbanner{border-radius:10px;padding:.5rem .85rem;border:2px solid;display:flex;flex-direction:column;gap:.1rem}
+.qbanner .qlabel{font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.qbanner b{font-size:1.05rem}
+.qbanner .qdef{font-size:.88rem;color:var(--ink)}
+.q-contA.qbanner{background:var(--qa-soft);border-color:var(--qa)}.q-contA .qlabel,.q-contA>b{color:var(--qa)}
+.q-reactB.qbanner{background:var(--qb-soft);border-color:var(--qb)}.q-reactB .qlabel,.q-reactB>b{color:var(--qb)}
+.qpair{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.6rem;margin:.5rem 0}
+.steps{margin:.3rem 0;padding:0;list-style:none;counter-reset:st;display:flex;flex-direction:column;gap:.35rem}
+.steps li{counter-increment:st;display:flex;gap:.55rem;align-items:flex-start}
+.steps li::before{content:counter(st);flex:none;width:1.35rem;height:1.35rem;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:inline-flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;margin-top:.1rem}
+.ylw{background:var(--new-soft);border:1px solid var(--new);border-radius:4px;padding:0 .3rem}
+.wimportant{border-left:4px solid var(--ink);background:var(--soft);border-radius:6px;padding:.45rem .8rem;margin-top:.6rem}
+.quoted{border:1px dashed var(--line2);border-radius:10px;padding:.8rem 1rem;background:var(--card)}
+.quoted .tag{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);font-weight:700}
+
+/* example picker */
+.picker{display:flex;flex-wrap:wrap;gap:.35rem;margin:.6rem 0}
+.picker button{min-width:2.6rem;padding:.35rem .6rem;border:1px solid var(--line2);border-radius:999px;background:var(--card);cursor:pointer}
+.picker button.sel{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.picker button.done::after{content:" ✓";font-size:.8em}
+.exhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:.2rem .8rem;margin:.6rem 0 .2rem}
+.exhead h3{margin:0;font-size:1.15rem}
+.exnote{font-size:.88rem;color:var(--dim)}
+.sub{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);margin:1rem 0 .35rem}
+.qchoose{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.qchoose button{text-align:left;cursor:pointer;opacity:.55}
+.qchoose button.sel{opacity:1;box-shadow:0 0 0 3px var(--card),0 0 0 5px currentColor}
+.qchoose button.q-contA{color:var(--qa)}.qchoose button.q-reactB{color:var(--qb)}
+.qchoose .qdef{color:var(--ink)}
+.ctx{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
+.pl{position:relative;display:flex;flex-direction:column;gap:.35rem;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:.5rem .7rem;text-align:left;cursor:pointer;width:100%}
+.pl:hover{border-color:var(--line2)}.pl.playing{border-color:var(--accent)}
+.pl .lab,.pl .barrow{width:100%}
+.pl .lab{display:flex;align-items:center;gap:.55rem;font-weight:500}
+.pl .who{color:var(--dim);font-weight:400;font-size:.85rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.pl.qfocus{border-width:2px}.pl.qfocus.q-contA{border-color:var(--qa)}.pl.qfocus.q-reactB{border-color:var(--qb)}
+.qtag{position:absolute;top:-.65rem;left:.6rem;font-size:.64rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#fff;border-radius:999px;padding:0 .45rem;line-height:1.25rem}
+.q-contA .qtag{background:var(--qa)}.q-reactB .qtag{background:var(--qb)}
+.ico{display:inline-flex;align-items:center;justify-content:center;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--accent);color:var(--accent-ink);flex:none;font-size:.78rem}
+.playing .ico{background:var(--ink);color:var(--paper)}
+.barrow{display:flex;align-items:center;gap:.55rem}.barrow .bar{flex:1;min-width:0}
+.bar{position:relative;height:10px;background:var(--line);border-radius:5px;overflow:hidden;display:flex}
+.bar .seg{height:100%;position:relative;overflow:hidden}
+.bar .seg.duo{background:color-mix(in srgb,var(--duo) 45%,transparent)}.bar .seg.new{background:color-mix(in srgb,var(--new) 30%,transparent)}
+.bar .seg.ctxonly{background:color-mix(in srgb,var(--accent) 22%,transparent)}
+.bar .seg+.seg{border-left:2px solid var(--card)}
+.bar .fill{position:absolute;left:0;top:0;bottom:0;width:0}
+.seg.duo .fill{background:var(--duo)}.seg.new .fill{background:var(--new)}.seg.ctxonly .fill{background:var(--accent)}
+.time{font-size:.74rem;color:var(--dim);white-space:nowrap}
+.flag{font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--new);color:var(--new-ink);border-radius:999px;padding:.05rem .5rem;visibility:hidden;white-space:nowrap}
+.pl.innew .flag{visibility:visible}.pl.innew{border-color:var(--new)}
+.tracks{display:grid;grid-template-columns:1fr;gap:.55rem}
+.card{background:var(--card);border:2px solid var(--line);border-radius:10px;padding:.5rem .7rem;display:grid;grid-template-columns:5.2rem 1fr;align-items:center;gap:.7rem}
+.card.innew{border-color:var(--new);background:var(--new-soft)}
+.card .head{display:flex;align-items:center;gap:.4rem;font-weight:600}
+.card .num{display:inline-flex;align-items:center;justify-content:center;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--accent-soft)}
+.card .reveal-tag{grid-column:1/-1;font-size:.88rem;font-weight:600}
+.pair{display:grid;grid-template-columns:1fr 2fr;gap:.55rem}
+.answer{background:var(--card);border:2px solid var(--line);border-radius:10px;padding:.6rem .9rem;display:flex;flex-direction:column;gap:.45rem}
+.answer.q-contA{border-color:var(--qa)}.answer.q-reactB{border-color:var(--qb)}
+.answer .qq{font-size:1.05rem;font-weight:600}.answer.q-contA .qq,.answer.q-contA .qremind{color:var(--qa)}.answer.q-reactB .qq,.answer.q-reactB .qremind{color:var(--qb)}
+.qremind{font-weight:700;font-size:.92rem;margin:0}
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.choice button{padding:.6rem;border-radius:8px;border:2px solid var(--line2);background:var(--card);font-weight:600;cursor:pointer}
+.choice button .claim{display:block;font-weight:500;font-size:.84rem;margin-top:.1rem}
+.answer.q-contA .claim{color:var(--qa)}.answer.q-reactB .claim{color:var(--qb)}
+.choice button.sel{border-color:var(--accent);background:var(--accent-soft)}
+.actions{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+.btn{border:0;border-radius:8px;padding:.55rem 1.1rem;font-weight:600;cursor:pointer;background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line2)}
+.revealed{border:2px solid var(--accent);border-radius:10px;background:var(--card);padding:.7rem 1rem;margin-top:.8rem}
+.verdict{font-weight:600}
+.ok{color:var(--ok)}.bad{color:var(--bad)}
+.kv{display:grid;grid-template-columns:7.5rem 1fr;gap:.25rem .8rem;margin:.4rem 0}
+.kv dt{color:var(--dim);font-size:.88rem}.kv dd{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:.35rem;margin:.3rem 0}
+.chip{font-size:.8rem;border-radius:999px;padding:.1rem .55rem;border:1px solid var(--line2);white-space:nowrap}
+.chip.q-contA{border-color:var(--qa)}.chip.q-reactB{border-color:var(--qb)}
+
+/* tables */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:.5rem 0;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:.88rem}
+th,td{padding:.38rem .6rem;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;background:var(--soft);font-size:.82rem}
+tbody tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;white-space:nowrap}
+tr.total td{font-weight:600}
+tr.muted td{color:var(--dim)}
+.pref-ok{color:var(--ok);font-weight:600}.pref-no{color:var(--bad);font-weight:600}
+.tag-s{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;border-radius:4px;padding:.05rem .35rem;white-space:nowrap}
+.tag-s.planned{background:var(--accent-soft);color:var(--accent)}.tag-s.post{background:var(--new-soft);color:var(--ink);border:1px solid var(--new)}
+footer{max-width:60rem;margin:0 auto;padding:1.5rem 16px 3rem;color:var(--dim);font-size:.82rem;border-top:1px solid var(--line)}
+kbd{font-family:ui-monospace,monospace;font-size:.75rem;border:1px solid var(--line2);border-radius:4px;padding:0 .3rem;background:var(--card)}
+@media (max-width:44rem){
+  .ctx{grid-template-columns:1fr}.pair{grid-template-columns:1fr}.card{grid-template-columns:1fr}.choice,.qchoose{grid-template-columns:1fr}
+  .kv{grid-template-columns:1fr}.kv dt{margin-top:.3rem}
+  header.top h1{font-size:1.25rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head>
+<body>
+<header class="top"><div class="in">
+  <h1>Continue A, or listen to B? A listening pilot for PMus</h1>
+  <p>Anonymous supplementary material for the submission “Measuring Context Use in Music Generation”. This page is static: it plays audio from its own folder and sends nothing anywhere.</p>
+</div></header>
+<nav class="toc" aria-label="Sections"><div class="in">
+  <a href="#overview">Overview</a><a href="#task">The listening task</a><a href="#try">Try it</a><a href="#results">Results</a><a href="#notes">Limits</a>
+</div></nav>
+<main>
+
+<section class="part" id="overview">
+<h2>Overview</h2>
+<p><b>The question.</b> PMus-Self and PMus-Partner are meant to capture two different relations between a continuation of player A and the duo's shared past: how much the continuation carries on A's own playing (Self: what A's past adds beyond B's), and how much it responds to B (Partner: what B's past adds beyond A's). If the two relations can be heard separately, there should be continuations that listeners judge as continuing A but not as responding to B, and the reverse; and Self and Partner should split on those continuations the same way.</p>
+<p><b>Why the paper's listening study could not test this.</b> In that study, every judged pair consisted of two continuations generated with access to both players. On those pairs PMus-Self and PMus-Partner rarely disagreed by more than noise, and listeners answered the two questions alike. Whether listeners separate the two relations, and whether Self and Partner follow that separation, therefore remained open.</p>
+<p><b>This pilot.</b> We composed duo excerpts in which the two relations are pulled apart. Each stimulus has a 10&nbsp;s shared past of player A and player B, followed by two alternative 5&nbsp;s continuations of player A only:</p>
+<ul class="tight">
+  <li><b>XA, “continues A”</b>: develops A's own phrase or behaviour and does not take up a cue that B introduced near the end of the past.</li>
+  <li><b>XB, “listens and responds to B”</b>: takes up B's cue (a key change, register, rhythm, cadence, motif, texture, a new figure, or a groove) and drops or redirects A's phrase.</li>
+</ul>
+<p>In three examples (2, 3 and 9) the change near the end of the past comes from A instead; there XA carries A's new idea forward and XB goes along with what B keeps playing. Both continuations are meant to be acceptable music: the contrast is in the relation, not in quality. Items were composed in MIDI, rendered with a General MIDI soundfont, and curated by listening.</p>
+<p><b>PMus on these items.</b> <span id="pmus-claim"></span></p>
+<p><b>Design.</b> Musically trained listeners (at least 3 years of training) heard a practice example and then 10 examples. Each example came with <em>one</em> of two questions, five examples per question, interleaved in random order, with a question card before every example. No listener heard the same example under both questions. They were told explicitly not to answer which track sounds better overall. The construction predicts XA under the continue-A question and XB under the listen-to-B question; per listener, the gap P(XA | continue-A) − P(XA | listen-to-B) should be positive.</p>
+<div class="qpair">
+  <div class="qbanner q-contA"><span class="qlabel">“continue A” question</span><b>Which track continues player A better?</b></div>
+  <div class="qbanner q-reactB"><span class="qlabel">“listen to B” question</span><b>Which track listens and responds to player B better?</b></div>
+</div>
+</section>
+
+<section class="part" id="task">
+<h2>The listening task, as participants saw it</h2>
+<p class="dim small">The instructions below are reproduced verbatim from the participant page, without the consent, screening and headphone-check parts (participants reported their years of musical training, were screened at 3 years, and passed a headphone check before the practice example).</p>
+<div class="quoted">
+  <div class="tag">Participant instructions</div>
+  <h3 style="margin-top:.3rem">Welcome!</h3>
+  <p>In this experiment you will hear short excerpts of two musicians playing together, <b>Player A</b> and <b>Player B</b>, each followed by two possible ways the music could continue. Your task will be to answer a question about these two continuations by choosing one of them. <b>Please listen closely and attentively.</b></p>
+  <div class="sub">Each excerpt, in 3 steps</div>
+  <ol class="steps">
+    <li><span><b>Listen to the duo:</b> Player A and Player B alone (a few seconds each), then both together.</span></li>
+    <li><span><b>Listen to the two continuations:</b> each alone or right after the duo (the <span class="ylw">yellow</span> part).</span></li>
+    <li><span><b>Answer the question:</b> choose Track 1 or Track 2. There is no right or wrong answer.</span></li>
+  </ol>
+  <div class="sub">The two questions</div>
+  <p>Each excerpt comes with <b>one of these two questions</b>, in no fixed order: <b>please read it every time</b>.</p>
+  <div class="qpair">
+    <div class="qbanner q-contA"><span class="qlabel">Question about player A</span><b>Which track continues player A better?</b><span class="qdef">= which track best carries on <b>Player A's own line</b></span></div>
+    <div class="qbanner q-reactB"><span class="qlabel">Question about player B</span><b>Which track listens and responds to player B better?</b><span class="qdef">= which track best <b>reacts to what Player B was playing</b></span></div>
+  </div>
+  <div class="wimportant"><b>Important: we are not asking which track sounds better overall.</b> Each question asks about one specific relation: answer only that question, even if you prefer the other track.</div>
+</div>
+<h3>On every example</h3>
+<ul class="tight">
+  <li>A <b>question card</b> came first, showing the example's question and one reminder line: for continue-A, “Not which track is better overall, but which one best carries on Player A's own line.”; for listen-to-B, “Not which track is better overall, but which one best listens and responds to what Player B was playing.” When the question differed from the previous example, the card said so, showed the previous question crossed out, and its button became active after 3&nbsp;s.</li>
+  <li>The page showed the question at the top in its colour (blue for A, magenta for B), outlined the player the question is about, and repeated the question on the answer buttons.</li>
+  <li><b>Gating:</b> the tracks unlocked once “Both together” had played to the end and Player A and Player B had each played for at least 2&nbsp;s; the answer unlocked once each track had been played to the end, alone or after the duo. Which continuation was Track 1 varied across listeners (roughly balanced per example and question).</li>
+  <li>In “Duo, then the track” the continuation starts at 10&nbsp;s; the bar and the card turn <span class="ylw">yellow</span> when it begins. This was the version participants used most.</li>
+  <li>In the later sessions (L7, L8 and the excluded listener), two optional free-text questions after the 10 examples asked how each question had been understood.</li>
+</ul>
+</section>
+
+<section class="part" id="try">
+<h2>Try it</h2>
+<p>Every example below uses the exact audio files participants heard (only file names and metadata changed). Track order is randomised each time the page loads. Choose a question, listen, answer, then reveal which track was which, the construction, the PMus scores and what listeners chose. Nothing is locked here; participants had to follow the gating described above. Keys: <kbd>1</kbd>/<kbd>2</kbd> play the duo then Track 1/2, <kbd>space</kbd> stops.</p>
+<div class="picker" id="picker" role="tablist" aria-label="Examples"></div>
+<div id="example"></div>
+</section>
+
+<section class="part" id="results">
+<h2>Results</h2>
+<p>Sessions counted: complete sessions with the interleaved two-question design, not duplicates. Listeners are numbered L1–L8 in the order they started. Four are <b>colleagues</b> (musicians known to the authors, recruited directly) and four were recruited on an <b>online panel</b>.</p>
+<div class="callout"><b>One listener excluded.</b> One colleague is excluded from the main analysis: in the free-text answer at the end, they described judging which continuation was the most idiomatically appropriate, rather than the relation asked about. This exclusion was decided after reading the free-text answers, so totals with this listener included are shown as well.</div>
+
+<h3>Overall</h3>
+<div class="tw"><table id="t-overall"></table></div>
+<p class="small dim">“Matched” counts answers that agree with the construction (XA under continue-A, XB under listen-to-B). Chance is half.</p>
+
+<h3>Per listener</h3>
+<div class="tw"><table id="t-listeners"></table></div>
+<p class="small dim">Gap = P(XA | continue-A question) − P(XA | listen-to-B question), from 5 answers per question. +1 = fully as constructed, 0 = the question made no difference, −1 = fully reversed. One online-panel listener answered almost exactly in reverse (1/10 matched).</p>
+
+<h3>Per example</h3>
+<div class="tw"><table id="t-examples"></table></div>
+<p class="small dim">ΔSelf = Self(XA) − Self(XB); ΔPartner = Partner(XB) − Partner(XA); both at the 5&nbsp;s past (the paper's protocol), in nats/token: positive = the measure prefers the constructed track. Listener columns exclude the excluded listener. Example 2 was heard only by L1 and replaced by Example 11 for everyone else.</p>
+
+<h3>Statistics</h3>
+<div class="tw"><table id="t-stats"></table></div>
+<p class="small dim" id="stats-note"></p>
+
+<h3>PMus beyond the pilot items</h3>
+<p>On all 46 constructed pairs built without using PMus (the composed originals, of which the pilot uses two), PMus-Self and PMus-Partner both ranked the pair as constructed (Self prefers XA and Partner prefers XB) in <b>40/46</b> at the 5&nbsp;s past (<b>33/46</b> at the 10&nbsp;s past).</p>
+<h3>How PMus scores a continuation</h3>
+<p class="small">Each continuation X is scored by its mean negative log-likelihood h(X | context) under an external audio language model (MusicGen-large), in nats per token, with C the true shared past (A and B mixed). Every measure is a difference h(X | comparison) − h(X | C); a higher value means the true context makes X more predictable than the comparison does.</p>
+<ul class="tight small">
+  <li><b>Self</b> = h(X | B) − h(X | C): what A's past adds beyond B's.</li>
+  <li><b>Partner</b> = h(X | A) − h(X | C): what B's past adds beyond A's.</li>
+  <li><b>Partner+</b> = h(X | A mixed with B̄) − h(X | C): the true B against the B parts of other excerpts (B̄), A kept; mean over 8 decoys.</li>
+  <li><b>Duo</b> = h(X | C̄) − h(X | C): the true shared past against the full pasts of other excerpts (C̄); mean over 8 decoys. A shared-context measure: it is not designed to separate the two relations.</li>
+</ul>
+<p class="small">Scores are given with the 5&nbsp;s past (the last 5&nbsp;s of the shared past as context, the paper's protocol) and the full 10&nbsp;s past that listeners heard.</p>
+</section>
+
+<section class="part" id="notes">
+<h2>Limits</h2>
+<ul class="tight">
+  <li><b>Small pilot.</b> 8 listeners (9 with the excluded one), 5 answers per question each. Data collection is continuing.</li>
+  <li><b>The planned evidence threshold has not been reached.</b> The planned test (a one-sided Bayes factor on per-listener gaps, threshold 6) gives 2.0 for all 8 listeners, and the first planned look is at 16 listeners. The group values are descriptive.</li>
+  <li><b>Items were selected for large PMus splits.</b> Of the ten examples heard by all listeners after the first, two are composed originals (Examples 3 and 6), two are PMus-tuned copies of originals (4 and 9) and six are variations checked with PMus while composing (1, 5, 7, 8, 10, 11). These items are a best case for the measures, not a typical case. PMus was used to build and select items, not to score listeners.</li>
+  <li><b>Colleagues are not naive listeners.</b> They know the authors and may know the aim of the study.</li>
+  <li><b>The analyses marked “added after seeing the data”</b> (the two-part mixture model, the colleague/panel split, the exclusion) are exploratory.</li>
+  <li>Stimuli are rendered MIDI with one General MIDI soundfont, not recordings.</li>
+</ul>
+</section>
+</main>
+<footer>Anonymous supplementary material for double-blind review. Audio: mono MP3 (32&nbsp;kHz, 96&nbsp;kb/s), as served to participants.</footer>
+
+<script>
+const DATA = /*DATA-BEGIN*/{"examples":[{"ex":1,"stem":"ex01","A":"Clarinet","B":"Tuba","family":"motif","change_from":"B","kind":"variation","kind_text":"Variation of a composed original, checked with PMus while composing.","tempo":96,"meter":"4/4 (shuffle)","past":"Clarinet repeats a syncopated pentatonic motif over a walking tuba; in the last two bars the tuba jumps up an octave into a bluesy eighth-note riff.","xa":"Clarinet carries on its own pentatonic motif and comes home to the tonic.","xb":"Clarinet plays the tuba's bluesy riff an octave higher, with notes it never played before.","note":"","audio":{"A":"audio/ex01_past_A.mp3","B":"audio/ex01_past_B.mp3","both":"audio/ex01_past_both.mp3","XA":{"alone":"audio/ex01_cont2_alone.mp3","duo":"audio/ex01_cont2_duo.mp3"},"XB":{"alone":"audio/ex01_cont1_alone.mp3","duo":"audio/ex01_cont1_duo.mp3"}},"pmus":{"5":{"Self":{"XA":0.281,"XB":0.085,"diff":0.197,"prefers":"XA"},"Partner":{"XA":-0.26,"XB":-0.047,"diff":0.212,"prefers":"XB"},"Partner+":{"XA":0.06,"XB":0.035,"diff":-0.025,"prefers":"XA"},"Duo":{"XA":0.274,"XB":0.17,"diff":0.104,"prefers":"XA"}},"10":{"Self":{"XA":0.396,"XB":0.133,"diff":0.263,"prefers":"XA"},"Partner":{"XA":-0.278,"XB":-0.083,"diff":0.195,"prefers":"XB"},"Partner+":{"XA":0.051,"XB":0.013,"diff":-0.037,"prefers":"XA"},"Duo":{"XA":0.378,"XB":0.184,"diff":0.194,"prefers":"XA"}}},"listeners":{"A_k":2,"A_n":5,"B_k":2,"B_n":3,"m_k":4,"m_n":8,"n_listeners":8,"rows":[{"L":"L1","group":"colleague","q":"contA","chose":"XA"},{"L":"L2","group":"online panel","q":"contA","chose":"XB"},{"L":"L3","group":"online panel","q":"reactB","chose":"XB"},{"L":"L4","group":"online panel","q":"reactB","chose":"XA"},{"L":"L5","group":"online panel","q":"contA","chose":"XB"},{"L":"L6","group":"colleague","q":"contA","chose":"XB"},{"L":"L7","group":"colleague","q":"reactB","chose":"XB"},{"L":"L8","group":"colleague","q":"contA","chose":"XA"}]}},{"ex":2,"stem":"ex02","A":"Cello","B":"Acoustic Grand Piano","family":"register","change_from":"A","kind":"tuned","kind_text":"PMus-tuned copy: a copy of a composed original in which a continuation was revised after PMus scoring.","tempo":120,"meter":"4/4","past":"Cello sings in the tenor register below the piano's broken chords; in the last bar the cello leaps up above the piano. The piano keeps its register and pattern.","xa":"Cello stays in its new high register and finishes the phrase there.","xb":"Cello drops into the piano's bass register and walks the piano's bass line, like a continuo part.","note":"Heard only by the first listener (L1); replaced by Example 11 for everyone else.","audio":{"A":"audio/ex02_past_A.mp3","B":"audio/ex02_past_B.mp3","both":"audio/ex02_past_both.mp3","XA":{"alone":"audio/ex02_cont1_alone.mp3","duo":"audio/ex02_cont1_duo.mp3"},"XB":{"alone":"audio/ex02_cont2_alone.mp3","duo":"audio/ex02_cont2_duo.mp3"}},"pmus":{"5":{"Self":{"XA":0.321,"XB":0.022,"diff":0.299,"prefers":"XA"},"Partner":{"XA":-0.189,"XB":-0.011,"diff":0.179,"prefers":"XB"},"Partner+":{"XA":0.102,"XB":0.004,"diff":-0.097,"prefers":"XA"},"Duo":{"XA":0.351,"XB":0.048,"diff":0.303,"prefers":"XA"}},"10":{"Self":{"XA":0.329,"XB":0.021,"diff":0.308,"prefers":"XA"},"Partner":{"XA":-0.197,"XB":-0.01,"diff":0.187,"prefers":"XB"},"Partner+":{"XA":0.096,"XB":0.015,"diff":-0.081,"prefers":"XA"},"Duo":{"XA":0.357,"XB":0.049,"diff":0.308,"prefers":"XA"}}},"listeners":{"A_k":0,"A_n":0,"B_k":1,"B_n":1,"m_k":1,"m_n":1,"n_listeners":1,"rows":[{"L":"L1","group":"colleague","q":"reactB","chose":"XB"}]}},{"ex":3,"stem":"ex03","A":"Violin","B":"Cello","family":"motif","change_from":"A","kind":"original","kind_text":"Composed original (not adjusted with PMus).","tempo":96,"meter":"4/4","past":"Violin sings a slow line over the cello's repeated dotted-arpeggio motif; in the last bar the violin introduces a new triplet-turn motif. The cello keeps its motif.","xa":"Violin develops its new triplet-turn motif down to a cadence.","xb":"Violin takes up the cello's dotted-arpeggio motif, two octaves higher.","note":"","audio":{"A":"audio/ex03_past_A.mp3","B":"audio/ex03_past_B.mp3","both":"audio/ex03_past_both.mp3","XA":{"alone":"audio/ex03_cont2_alone.mp3","duo":"audio/ex03_cont2_duo.mp3"},"XB":{"alone":"audio/ex03_cont1_alone.mp3","duo":"audio/ex03_cont1_duo.mp3"}},"pmus":{"5":{"Self":{"XA":0.462,"XB":0.266,"diff":0.196,"prefers":"XA"},"Partner":{"XA":-0.314,"XB":-0.062,"diff":0.252,"prefers":"XB"},"Partner+":{"XA":0.113,"XB":0.096,"diff":-0.017,"prefers":"XA"},"Duo":{"XA":0.495,"XB":0.343,"diff":0.153,"prefers":"XA"}},"10":{"Self":{"XA":0.614,"XB":0.449,"diff":0.165,"prefers":"XA"},"Partner":{"XA":-0.257,"XB":-0.055,"diff":0.202,"prefers":"XB"},"Partner+":{"XA":0.099,"XB":0.116,"diff":0.016,"prefers":"XB"},"Duo":{"XA":0.67,"XB":0.575,"diff":0.095,"prefers":"XA"}}},"listeners":{"A_k":0,"A_n":3,"B_k":5,"B_n":5,"m_k":5,"m_n":8,"n_listeners":8,"rows":[{"L":"L1","group":"colleague","q":"reactB","chose":"XB"},{"L":"L2","group":"online panel","q":"reactB","chose":"XB"},{"L":"L3","group":"online panel","q":"contA","chose":"XB"},{"L":"L4","group":"online panel","q":"contA","chose":"XB"},{"L":"L5","group":"online panel","q":"reactB","chose":"XB"},{"L":"L6","group":"colleague","q":"reactB","chose":"XB"},{"L":"L7","group":"colleague","q":"contA","chose":"XB"},{"L":"L8","group":"colleague","q":"reactB","chose":"XB"}]}},{"ex":4,"stem":"ex04","A":"Violin","B":"Harpsichord","family":"cadence","change_from":"B","kind":"tuned","kind_text":"PMus-tuned copy: a copy of a composed original in which a continuation was revised after PMus scoring.","tempo":84,"meter":"4/4","past":"Violin runs in sixteenths over a harpsichord continuo; in the last bar the harpsichord cadences to the tonic (D minor) while the violin keeps running on the dominant.","xa":"Violin keeps running sixteenths on the dominant harmony, with no arrival.","xb":"Violin lands on the tonic with the harpsichord and joins its chordal pulse with repeated double stops.","note":"","audio":{"A":"audio/ex04_past_A.mp3","B":"audio/ex04_past_B.mp3","both":"audio/ex04_past_both.mp3","XA":{"alone":"audio/ex04_cont2_alone.mp3","duo":"audio/ex04_cont2_duo.mp3"},"XB":{"alone":"audio/ex04_cont1_alone.mp3","duo":"audio/ex04_cont1_duo.mp3"}},"pmus":{"5":{"Self":{"XA":0.299,"XB":0.118,"diff":0.181,"prefers":"XA"},"Partner":{"XA":-0.33,"XB":-0.089,"diff":0.241,"prefers":"XB"},"Partner+":{"XA":-0.009,"XB":0.041,"diff":0.05,"prefers":"XB"},"Duo":{"XA":0.384,"XB":0.216,"diff":0.169,"prefers":"XA"}},"10":{"Self":{"XA":0.416,"XB":0.24,"diff":0.176,"prefers":"XA"},"Partner":{"XA":-0.314,"XB":-0.158,"diff":0.156,"prefers":"XB"},"Partner+":{"XA":0.036,"XB":0.045,"diff":0.01,"prefers":"XB"},"Duo":{"XA":0.505,"XB":0.35,"diff":0.155,"prefers":"XA"}}},"listeners":{"A_k":4,"A_n":4,"B_k":4,"B_n":4,"m_k":8,"m_n":8,"n_listeners":8,"rows":[{"L":"L1","group":"colleague","q":"contA","chose":"XA"},{"L":"L2","group":"online panel","q":"reactB","chose":"XB"},{"L":"L3","group":"online panel","q":"contA","chose":"XA"},{"L":"L4","group":"online panel","q":"contA","chose":"XA"},{"L":"L5","group":"online panel","q":"reactB","chose":"XB"},{"L":"L6","group":"colleague","q":"reactB","chose":"XB"},{"L":"L7","group":"colleague","q":"contA","chose":"XA"},{"L":"L8","group":"colleague","q":"reactB","chose":"XB"}]}},{"ex":5,"stem":"ex05","A":"Drawbar Organ","B":"Alto Sax","family":"register","change_from":"B","kind":"variation","kind_text":"Variation of a composed original, checked with PMus while composing.","tempo":96,"meter":"4/4","past":"Organ plays a moving bass line under the alto-sax melody; in the last bar the sax jumps up and plays a punchy repeated-note riff.","xa":"Organ keeps its low, moving bass line.","xb":"Organ leaves the bass and plays the sax's riff in octaves, in the sax's high register.","note":"","audio":{"A":"audio/ex05_past_A.mp3","B":"audio/ex05_past_B.mp3","both":"audio/ex05_past_both.mp3","XA":{"alone":"audio/ex05_cont2_alone.mp3","duo":"audio/ex05_cont2_duo.mp3"},"XB":{"alone":"audio/ex05_cont1_alone.mp3","duo":"audio/ex05_cont1_duo.mp3"}},"pmus":{"5":{"Self":{"XA":0.124,"XB":-0.001,"diff":0.126,"prefers":"XA"},"Partner":{"XA":-0.28,"XB":0.074,"diff":0.355,"prefers":"XB"},"Partner+":{"XA":-0.005,"XB":0.046,"diff":0.051,"prefers":"XB"},"Duo":{"XA":0.141,"XB":0.034,"diff":0.107,"prefers":"XA"}},"10":{"Self":{"XA":0.171,"XB":-0.004,"diff":0.175,"prefers":"XA"},"Partner":{"XA":-0.358,"XB":0.07,"diff":0.428,"prefers":"XB"},"Partner+":{"XA":0.019,"XB":0.051,"diff":0.033,"prefers":"XB"},"Duo":{"XA":0.198,"XB":0.043,"diff":0.155,"prefers":"XA"}}},"listeners":{"A_k":2,"A_n":5,"B_k":1,"B_n":3,"m_k":3,"m_n":8,"n_listeners":8,"rows":[{"L":"L1","group":"colleague","q":"contA","chose":"XA"},{"L":"L2","group":"online panel","q":"contA","chose":"XB"},{"L":"L3","group":"online panel","q":"reactB","chose":"XB"},{"L":"L4","group":"online panel","q":"reactB","chose":"XA"},{"L":"L5","group":"online panel","q":"contA","chose":"XB"},{"L":"L6","group":"colleague","q":"contA","chose":"XB"},{"L":"L7","group":"colleague","q":"reactB","chose":"XA"},{"L":"L8","group":"colleague","q":"contA","chose":"XA"}]}},{"ex":6,"stem":"ex06","A":"Clavinet","B":"Electric Bass (finger)","family":"new figure from the partner","change_from":"B","kind":"original","kind_text":"Composed original (not adjusted with PMus).","tempo":96,"meter":"4/4","past":"Clavinet plays a sixteenth-note funk riff over a bass groove; in the last bar the bass breaks out with a bluesy sixteenth-note fill.","xa":"Clavinet carries on its riff as if nothing happened.","xb":"Clavinet answers with the bass's fill figure, two octaves higher, as a new riff.","note":"","audio":{"A":"audio/ex06_past_A.mp3","B":"audio/ex06_past_B.mp3","both":"audio/ex06_past_both.mp3","XA":{"alone":"audio/ex06_cont2_alone.mp3","duo":"audio/ex06_cont2_duo.mp3"},"XB":{"alone":"audio/ex06_cont1_alone.mp3","duo":"audio/ex06_cont1_duo.mp3"}},"pmus":{"5":{"Self":{"XA":0.374,"XB":0.252,"diff":0.122,"prefers":"XA"},"Partner":{"XA":-0.407,"XB":-0.141,"diff":0.265,"prefers":"XB"},"Partner+":{"XA":0.022,"XB":0.056,"diff":0.034,"prefers":"XB"},"Duo":{"XA":0.422,"XB":0.347,"diff":0.075,"prefers":"XA"}},"10":{"Self":{"XA":0.447,"XB":0.287,"diff":0.16,"prefers":"XA"},"Partner":{"XA":-0.373,"XB":-0.144,"diff":0.229,"prefers":"XB"},"Partner+":{"XA":-0.014,"XB":0.037,"diff":0.051,"prefers":"XB"},"Duo":{"XA":0.491,"XB":0.362,"diff":0.129,"prefers":"XA"}}},"listeners":{"A_k":2,"A_n":4,"B_k":2,"B_n":4,"m_k":4,"m_n":8,"n_listeners":8,"rows":[{"L":"L1","group":"colleague","q":"reactB","chose":"XB"},{"L":"L2","group":"online panel","q":"contA","chose":"XB"},{"L":"L3","group":"online panel","q":"reactB","chose":"XA"},{"L":"L4","group":"online panel","q":"reactB","chose":"XA"},{"L":"L5","group":"online panel","q":"contA","chose":"XA"},{"L":"L6","group":"colleague","q":"contA","chose":"XB"},{"L":"L7","group":"colleague","q":"reactB","chose":"XB"},{"L":"L8","group":"colleague","q":"contA","chose":"XA"}]}},{"ex":7,"stem":"ex07","A":"Electric Guitar (clean)","B":"Trumpet","family":"groove","change_from":"B","kind":"variation","kind_text":"Variation of a composed original, checked with PMus while composing.","tempo":84,"meter":"4/4","past":"Clean guitar repeats a low riff; the trumpet holds long notes and ends with a quick rising sixteenth-note turn.","xa":"Guitar keeps its low riff and ignores the turn.","xb":"Guitar echoes the trumpet's turn and continues with a trumpet-like melodic line, leaving the riff.","note":"","audio":{"A":"audio/ex07_past_A.mp3","B":"audio/ex07_past_B.mp3","both":"audio/ex07_past_both.mp3","XA":{"alone":"audio/ex07_cont1_alone.mp3","duo":"audio/ex07_cont1_duo.mp3"},"XB":{"alone":"audio/ex07_cont2_alone.mp3","duo":"audio/ex07_cont2_duo.mp3"}},"pmus":{"5":{"Self":{"XA":0.143,"XB":0.021,"diff":0.122,"prefers":"XA"},"Partner":{"XA":-0.364,"XB":-0.067,"diff":0.297,"prefers":"XB"},"Partner+":{"XA":-0.16,"XB":-0.013,"diff":0.147,"prefers":"XB"},"Duo":{"XA":0.205,"XB":0.091,"diff":0.114,"prefers":"XA"}},"10":{"Self":{"XA":0.307,"XB":0.062,"diff":0.245,"prefers":"XA"},"Partner":{"XA":-0.358,"XB":-0.062,"diff":0.296,"prefers":"XB"},"Partner+":{"XA":-0.151,"XB":-0.001,"diff":0.15,"prefers":"XB"},"Duo":{"XA":0.348,"XB":0.112,"diff":0.235,"prefers":"XA"}}},"listeners":{"A_k":2,"A_n":3,"B_k":5,"B_n":5,"m_k":7,"m_n":8,"n_listeners":8,"rows":[{"L":"L1","group":"colleague","q":"reactB","chose":"XB"},{"L":"L2","group":"online panel","q":"reactB","chose":"XB"},{"L":"L3","group":"online panel","q":"contA","chose":"XA"},{"L":"L4","group":"online panel","q":"contA","chose":"XB"},{"L":"L5","group":"online panel","q":"reactB","chose":"XB"},{"L":"L6","group":"colleague","q":"reactB","chose":"XB"},{"L":"L7","group":"colleague","q":"contA","chose":"XA"},{"L":"L8","group":"colleague","q":"reactB","chose":"XB"}]}},{"ex":8,"stem":"ex08","A":"Acoustic Guitar (steel)","B":"French Horn","family":"rhythm","change_from":"B","kind":"variation","kind_text":"Variation of a composed original, checked with PMus while composing.","tempo":90,"meter":"4/4","past":"Steel-string guitar fingerpicks sixteenth notes; the horn holds long notes, then starts a syncopated off-beat rocking figure.","xa":"Guitar keeps its fingerpicking pattern.","xb":"Guitar takes up the horn's off-beat rocking figure, as chords.","note":"","audio":{"A":"audio/ex08_past_A.mp3","B":"audio/ex08_past_B.mp3","both":"audio/ex08_past_both.mp3","XA":{"alone":"audio/ex08_cont1_alone.mp3","duo":"audio/ex08_cont1_duo.mp3"},"XB":{"alone":"audio/ex08_cont2_alone.mp3","duo":"audio/ex08_cont2_duo.mp3"}},"pmus":{"5":{"Self":{"XA":0.138,"XB":0.024,"diff":0.115,"prefers":"XA"},"Partner":{"XA":-0.307,"XB":-0.019,"diff":0.287,"prefers":"XB"},"Partner+":{"XA":-0.097,"XB":0.004,"diff":0.101,"prefers":"XB"},"Duo":{"XA":0.221,"XB":0.073,"diff":0.148,"prefers":"XA"}},"10":{"Self":{"XA":0.377,"XB":0.032,"diff":0.345,"prefers":"XA"},"Partner":{"XA":-0.472,"XB":-0.039,"diff":0.433,"prefers":"XB"},"Partner+":{"XA":-0.014,"XB":0.009,"diff":0.023,"prefers":"XB"},"Duo":{"XA":0.454,"XB":0.095,"diff":0.359,"prefers":"XA"}}},"listeners":{"A_k":3,"A_n":4,"B_k":3,"B_n":4,"m_k":6,"m_n":8,"n_listeners":8,"rows":[{"L":"L1","group":"colleague","q":"contA","chose":"XA"},{"L":"L2","group":"online panel","q":"reactB","chose":"XA"},{"L":"L3","group":"online panel","q":"contA","chose":"XA"},{"L":"L4","group":"online panel","q":"contA","chose":"XB"},{"L":"L5","group":"online panel","q":"reactB","chose":"XB"},{"L":"L6","group":"colleague","q":"reactB","chose":"XB"},{"L":"L7","group":"colleague","q":"contA","chose":"XA"},{"L":"L8","group":"colleague","q":"reactB","chose":"XB"}]}},{"ex":9,"stem":"ex09","A":"Viola","B":"Acoustic Grand Piano","family":"key","change_from":"A","kind":"tuned","kind_text":"PMus-tuned copy: a copy of a composed original in which a continuation was revised after PMus scoring.","tempo":108,"meter":"3/4","past":"Waltz in D major: piano accompaniment under a viola melody; in the last two bars the viola turns towards G minor while the piano cadences and stays in D major.","xa":"Viola continues in G minor, carrying its own modulation forward.","xb":"Viola drops its melody and joins the piano's waltz accompaniment in D major.","note":"","audio":{"A":"audio/ex09_past_A.mp3","B":"audio/ex09_past_B.mp3","both":"audio/ex09_past_both.mp3","XA":{"alone":"audio/ex09_cont1_alone.mp3","duo":"audio/ex09_cont1_duo.mp3"},"XB":{"alone":"audio/ex09_cont2_alone.mp3","duo":"audio/ex09_cont2_duo.mp3"}},"pmus":{"5":{"Self":{"XA":0.446,"XB":0.193,"diff":0.253,"prefers":"XA"},"Partner":{"XA":-0.161,"XB":-0.051,"diff":0.11,"prefers":"XB"},"Partner+":{"XA":0.162,"XB":0.039,"diff":-0.123,"prefers":"XA"},"Duo":{"XA":0.484,"XB":0.182,"diff":0.302,"prefers":"XA"}},"10":{"Self":{"XA":0.566,"XB":0.258,"diff":0.308,"prefers":"XA"},"Partner":{"XA":-0.167,"XB":-0.038,"diff":0.129,"prefers":"XB"},"Partner+":{"XA":0.183,"XB":0.085,"diff":-0.099,"prefers":"XA"},"Duo":{"XA":0.613,"XB":0.259,"diff":0.355,"prefers":"XA"}}},"listeners":{"A_k":4,"A_n":5,"B_k":1,"B_n":3,"m_k":5,"m_n":8,"n_listeners":8,"rows":[{"L":"L1","group":"colleague","q":"contA","chose":"XA"},{"L":"L2","group":"online panel","q":"contA","chose":"XB"},{"L":"L3","group":"online panel","q":"reactB","chose":"XB"},{"L":"L4","group":"online panel","q":"reactB","chose":"XA"},{"L":"L5","group":"online panel","q":"contA","chose":"XA"},{"L":"L6","group":"colleague","q":"contA","chose":"XA"},{"L":"L7","group":"colleague","q":"reactB","chose":"XA"},{"L":"L8","group":"colleague","q":"contA","chose":"XA"}]}},{"ex":10,"stem":"ex10","A":"Drawbar Organ","B":"Acoustic Bass","family":"new figure from the partner","change_from":"B","kind":"variation","kind_text":"Variation of a composed original, checked with PMus while composing.","tempo":84,"meter":"4/4","past":"Organ comps with chord stabs and short licks over an acoustic bass; in the last bar the bass breaks out with a down-and-up sixteenth-note fill.","xa":"Organ carries on its stab-and-lick comping.","xb":"Organ answers with the bass's fill figure an octave higher, as a new single-line riff.","note":"","audio":{"A":"audio/ex10_past_A.mp3","B":"audio/ex10_past_B.mp3","both":"audio/ex10_past_both.mp3","XA":{"alone":"audio/ex10_cont1_alone.mp3","duo":"audio/ex10_cont1_duo.mp3"},"XB":{"alone":"audio/ex10_cont2_alone.mp3","duo":"audio/ex10_cont2_duo.mp3"}},"pmus":{"5":{"Self":{"XA":0.22,"XB":0.072,"diff":0.148,"prefers":"XA"},"Partner":{"XA":-0.238,"XB":-0.135,"diff":0.104,"prefers":"XB"},"Partner+":{"XA":0.099,"XB":0.058,"diff":-0.041,"prefers":"XA"},"Duo":{"XA":0.293,"XB":0.169,"diff":0.124,"prefers":"XA"}},"10":{"Self":{"XA":0.367,"XB":0.119,"diff":0.248,"prefers":"XA"},"Partner":{"XA":-0.471,"XB":-0.158,"diff":0.312,"prefers":"XB"},"Partner+":{"XA":0.133,"XB":0.068,"diff":-0.065,"prefers":"XA"},"Duo":{"XA":0.431,"XB":0.218,"diff":0.213,"prefers":"XA"}}},"listeners":{"A_k":3,"A_n":4,"B_k":3,"B_n":4,"m_k":6,"m_n":8,"n_listeners":8,"rows":[{"L":"L1","group":"colleague","q":"reactB","chose":"XB"},{"L":"L2","group":"online panel","q":"contA","chose":"XA"},{"L":"L3","group":"online panel","q":"reactB","chose":"XB"},{"L":"L4","group":"online panel","q":"reactB","chose":"XA"},{"L":"L5","group":"online panel","q":"contA","chose":"XB"},{"L":"L6","group":"colleague","q":"contA","chose":"XA"},{"L":"L7","group":"colleague","q":"reactB","chose":"XB"},{"L":"L8","group":"colleague","q":"contA","chose":"XA"}]}},{"ex":11,"stem":"ex11","A":"Electric Guitar (muted)","B":"Slap Bass 1","family":"new figure from the partner","change_from":"B","kind":"variation","kind_text":"Variation of a composed original, checked with PMus while composing.","tempo":108,"meter":"4/4","past":"Muted guitar chanks sixteenth-note chords over a slap-bass groove; in the last bar the bass breaks out with a bluesy run.","xa":"Guitar keeps chanking its chord riff as if nothing happened.","xb":"Guitar answers with the bass's run figure as a single-note riff, two octaves above the bass.","note":"Replaced Example 2 for all listeners after the first. Its files are about 4.4 dB quieter than the others (one gain for the whole example, to keep its sharp attacks below full scale); played here exactly as participants heard it.","audio":{"A":"audio/ex11_past_A.mp3","B":"audio/ex11_past_B.mp3","both":"audio/ex11_past_both.mp3","XA":{"alone":"audio/ex11_cont2_alone.mp3","duo":"audio/ex11_cont2_duo.mp3"},"XB":{"alone":"audio/ex11_cont1_alone.mp3","duo":"audio/ex11_cont1_duo.mp3"}},"pmus":{"5":{"Self":{"XA":0.192,"XB":0.102,"diff":0.09,"prefers":"XA"},"Partner":{"XA":-0.278,"XB":-0.095,"diff":0.183,"prefers":"XB"},"Partner+":{"XA":-0.016,"XB":0.015,"diff":0.032,"prefers":"XB"},"Duo":{"XA":0.229,"XB":0.145,"diff":0.084,"prefers":"XA"}},"10":{"Self":{"XA":0.33,"XB":0.155,"diff":0.175,"prefers":"XA"},"Partner":{"XA":-0.326,"XB":-0.101,"diff":0.226,"prefers":"XB"},"Partner+":{"XA":-0.025,"XB":0.024,"diff":0.049,"prefers":"XB"},"Duo":{"XA":0.384,"XB":0.214,"diff":0.17,"prefers":"XA"}}},"listeners":{"A_k":2,"A_n":3,"B_k":4,"B_n":4,"m_k":6,"m_n":7,"n_listeners":7,"rows":[{"L":"L2","group":"online panel","q":"reactB","chose":"XB"},{"L":"L3","group":"online panel","q":"contA","chose":"XA"},{"L":"L4","group":"online panel","q":"contA","chose":"XB"},{"L":"L5","group":"online panel","q":"reactB","chose":"XB"},{"L":"L6","group":"colleague","q":"reactB","chose":"XB"},{"L":"L7","group":"colleague","q":"contA","chose":"XA"},{"L":"L8","group":"colleague","q":"reactB","chose":"XB"}]}},{"ex":0,"stem":"practice","A":"Acoustic Grand Piano","B":"Acoustic Bass","family":"texture","change_from":"B","kind":"original","kind_text":"Composed original (not adjusted with PMus).","tempo":96,"meter":"4/4","past":"Slow ballad: piano plays sustained chords over a walking bass; in the last bar the bass stops walking and plays staccato repeated eighths.","xa":"Piano continues with sustained legato chords.","xb":"Piano adopts the bass's staccato repeated-note eighths.","note":"Practice example: shown first, with the continue-A question; never analysed.","audio":{"A":"audio/practice_past_A.mp3","B":"audio/practice_past_B.mp3","both":"audio/practice_past_both.mp3","XA":{"alone":"audio/practice_cont2_alone.mp3","duo":"audio/practice_cont2_duo.mp3"},"XB":{"alone":"audio/practice_cont1_alone.mp3","duo":"audio/practice_cont1_duo.mp3"}},"pmus":{"5":{"Self":{"XA":0.172,"XB":0.027,"diff":0.145,"prefers":"XA"},"Partner":{"XA":-0.127,"XB":-0.033,"diff":0.094,"prefers":"XB"},"Partner+":{"XA":0.091,"XB":0.004,"diff":-0.087,"prefers":"XA"},"Duo":{"XA":0.156,"XB":0.026,"diff":0.13,"prefers":"XA"}},"10":{"Self":{"XA":0.266,"XB":0.051,"diff":0.215,"prefers":"XA"},"Partner":{"XA":-0.312,"XB":-0.042,"diff":0.27,"prefers":"XB"},"Partner+":{"XA":0.111,"XB":-0.001,"diff":-0.113,"prefers":"XA"},"Duo":{"XA":0.248,"XB":0.028,"diff":0.22,"prefers":"XA"}}},"listeners":null}],"listeners":[{"L":"L1","group":"colleague","A_k":5,"A_n":5,"B_k":5,"B_n":5,"m_k":10,"m_n":10,"n_listeners":1,"gap":1.0,"excluded":false},{"L":"L2","group":"online panel","A_k":1,"A_n":5,"B_k":4,"B_n":5,"m_k":5,"m_n":10,"n_listeners":1,"gap":0.0,"excluded":false},{"L":"L3","group":"online panel","A_k":4,"A_n":5,"B_k":4,"B_n":5,"m_k":8,"m_n":10,"n_listeners":1,"gap":0.6,"excluded":false},{"L":"L4","group":"online panel","A_k":1,"A_n":5,"B_k":0,"B_n":5,"m_k":1,"m_n":10,"n_listeners":1,"gap":-0.8,"excluded":false},{"L":"L5","group":"online panel","A_k":2,"A_n":5,"B_k":5,"B_n":5,"m_k":7,"m_n":10,"n_listeners":1,"gap":0.4,"excluded":false},{"L":"L6","group":"colleague","A_k":2,"A_n":5,"B_k":5,"B_n":5,"m_k":7,"m_n":10,"n_listeners":1,"gap":0.4,"excluded":false},{"L":"L7","group":"colleague","A_k":4,"A_n":5,"B_k":3,"B_n":5,"m_k":7,"m_n":10,"n_listeners":1,"gap":0.4,"excluded":false},{"L":"L8","group":"colleague","A_k":5,"A_n":5,"B_k":5,"B_n":5,"m_k":10,"m_n":10,"n_listeners":1,"gap":1.0,"excluded":false},{"L":"excluded","group":"colleague","A_k":3,"A_n":5,"B_k":2,"B_n":5,"m_k":5,"m_n":10,"n_listeners":1,"gap":0.0,"excluded":true}],"totals":{"main":{"colleague":{"A_k":16,"A_n":20,"B_k":18,"B_n":20,"m_k":34,"m_n":40,"n_listeners":4},"online panel":{"A_k":8,"A_n":20,"B_k":13,"B_n":20,"m_k":21,"m_n":40,"n_listeners":4},"all":{"A_k":24,"A_n":40,"B_k":31,"B_n":40,"m_k":55,"m_n":80,"n_listeners":8}},"with_excluded":{"colleague":{"A_k":19,"A_n":25,"B_k":20,"B_n":25,"m_k":39,"m_n":50,"n_listeners":5},"online panel":{"A_k":8,"A_n":20,"B_k":13,"B_n":20,"m_k":21,"m_n":40,"n_listeners":4},"all":{"A_k":27,"A_n":45,"B_k":33,"B_n":45,"m_k":60,"m_n":90,"n_listeners":9}}},"stats":{"bf":{"colleague":6.98,"online panel":0.48,"all":1.98},"bf_with_excluded":{"colleague":4.63,"all":1.9},"mean_gap":{"colleague":0.7,"online panel":0.05,"all":0.375}}}/*DATA-END*/;
+const Q = {
+  contA: { text: "Which track continues player A better?", short: "continue A", label: "Question about player A",
+           def: "= which track best carries on <b>Player A's own line</b>",
+           remind: "Not which track is better overall, but which one best carries on Player A's own line.", target: "XA" },
+  reactB: { text: "Which track listens and responds to player B better?", short: "listen to B", label: "Question about player B",
+            def: "= which track best <b>reacts to what Player B was playing</b>",
+            remind: "Not which track is better overall, but which one best listens and responds to what Player B was playing.", target: "XB" }
+};
+const PAST = 10, FUT = 5;
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const frac = (k, n) => `${k}/${n}`;
+const pct = (k, n) => n ? ` <span class="dim">(${Math.round(100 * k / n)}%)</span>` : "";
+const sgn = (x, d = 3) => (x > 0 ? "+" : x < 0 ? "−" : "") + Math.abs(x).toFixed(d);
+const exLabel = e => e.ex ? `Example ${e.ex}` : "Practice example";
+
+// ---------- audio players (one sound at a time)
+let players = [], raf = null;
+function stopAll(except) { players.forEach(p => { if (p !== except && !p.audio.paused) p.audio.pause(); }); }
+function fmt(t) { return (Math.round(t * 10) / 10).toFixed(1) + " s"; }
+function makePlayer(src, dur, label, who, opts = {}) {
+  const a = new Audio(); a.preload = "none"; a.src = src;
+  const el = document.createElement("button"); el.type = "button"; el.className = "pl";
+  const segs = opts.seam ? `<span class="seg duo" style="width:${opts.seam / dur * 100}%"><span class="fill"></span></span><span class="seg new" style="width:${(dur - opts.seam) / dur * 100}%"><span class="fill"></span></span>`
+                         : `<span class="seg ${opts.allNew ? "new" : "ctxonly"}" style="width:100%"><span class="fill"></span></span>`;
+  el.innerHTML = `<span class="lab"><span class="ico" aria-hidden="true">▶</span><span>${esc(label)}</span><span class="who">${esc(who || "")}</span>${opts.track ? `<span class="flag" style="margin-left:auto">▶ new part</span>` : ""}</span>
+    <span class="barrow"><span class="bar">${segs}</span><span class="time mono">0.0 s / ${fmt(dur)}</span></span>`;
+  el.setAttribute("aria-label", `Play ${label}${who ? " (" + who + ")" : ""}`);
+  const p = { audio: a, el, dur, seam: opts.seam || null, allNew: !!opts.allNew, card: opts.card || null, inNew: false };
+  const fills = el.querySelectorAll(".fill"), ico = el.querySelector(".ico"), time = el.querySelector(".time");
+  p.draw = () => {
+    const pos = a.currentTime || 0, D = a.duration && isFinite(a.duration) ? a.duration : dur;
+    if (p.seam) { fills[0].style.width = Math.min(1, pos / p.seam) * 100 + "%"; fills[1].style.width = Math.max(0, Math.min(1, (pos - p.seam) / (D - p.seam))) * 100 + "%"; }
+    else fills[0].style.width = Math.min(1, pos / D) * 100 + "%";
+    time.textContent = fmt(pos) + " / " + fmt(D);
+    const nowNew = !a.paused && (p.allNew || (p.seam !== null && pos >= p.seam));
+    if (nowNew !== p.inNew) { p.inNew = nowNew; el.classList.toggle("innew", nowNew); if (p.card) p.card.classList.toggle("innew", nowNew); }
+  };
+  p.play = () => { stopAll(p); a.currentTime = 0; const pr = a.play(); if (pr && pr.catch) pr.catch(() => {}); el.classList.add("playing"); ico.textContent = "■"; loop(); };
+  el.onclick = () => { if (!a.paused) { a.pause(); return; } p.play(); };
+  a.addEventListener("pause", () => { el.classList.remove("playing"); ico.textContent = "▶"; p.draw(); });
+  a.addEventListener("ended", () => { el.classList.remove("playing"); ico.textContent = "▶"; p.draw(); });
+  a.addEventListener("timeupdate", () => p.draw());
+  a.addEventListener("loadedmetadata", () => p.draw());
+  players.push(p); return p;
+}
+function loop() {
+  if (raf) return;
+  const step = () => { let any = false; players.forEach(p => { if (!p.audio.paused) { any = true; p.draw(); } }); raf = any ? requestAnimationFrame(step) : null; };
+  raf = requestAnimationFrame(step);
+}
+
+// ---------- try-it
+const EX = DATA.examples;
+const order = {};   // per example: [cont on Track 1, cont on Track 2], randomised per page load
+EX.forEach(e => { order[e.stem] = Math.random() < 0.5 ? ["XA", "XB"] : ["XB", "XA"]; });
+const st = {};      // per example: {q, answer, revealed}
+let cur = null;
+function stOf(e) { return st[e.stem] || (st[e.stem] = { q: e.ex ? "contA" : "contA", answer: null, revealed: false }); }
+
+function renderPicker() {
+  const pk = document.getElementById("picker");
+  pk.innerHTML = EX.map((e, i) => `<button type="button" role="tab" data-i="${i}" class="${cur === e ? "sel" : ""} ${st[e.stem] && st[e.stem].revealed ? "done" : ""}" aria-selected="${cur === e}">${e.ex ? e.ex : "Practice"}</button>`).join("");
+  pk.querySelectorAll("button").forEach(b => b.onclick = () => { show(EX[+b.dataset.i]); });
+}
+function show(e, scroll) {
+  stopAll(); players = []; cur = e; renderPicker(); renderExample(e);
+  if (scroll) document.getElementById("try").scrollIntoView();
+  try { history.replaceState(null, "", "#" + e.stem); } catch (err) {}
+}
+function renderExample(e) {
+  const s = stOf(e), q = Q[s.q], ord = order[e.stem], root = document.getElementById("example");
+  root.innerHTML = `
+    <div class="exhead"><h3>${exLabel(e)}</h3><span class="exnote">Player A: ${esc(e.A)} · Player B: ${esc(e.B)}</span></div>
+    ${e.ex === 0 ? `<p class="exnote">The practice example came first, always with the continue-A question; its answers were never analysed.</p>` : ""}
+    ${e.ex === 2 ? `<p class="exnote">${esc(e.note)}</p>` : ""}
+    <div class="sub">1 · Choose the question</div>
+    <div class="qchoose">${["contA", "reactB"].map(k => `<button type="button" class="qbanner q-${k} ${s.q === k ? "sel" : ""}" data-q="${k}" aria-pressed="${s.q === k}"><span class="qlabel">${Q[k].label}</span><b>${Q[k].text}</b><span class="qremind">${Q[k].remind}</span></button>`).join("")}</div>
+    <div class="sub">2 · The last ${PAST} seconds of a duo</div>
+    <div class="ctx" id="ctx"></div>
+    <div class="sub">3 · Two possible continuations</div>
+    <div class="tracks" id="tracks"></div>
+    <div class="sub">4 · Your answer</div>
+    <div class="answer q-${s.q}"><div class="qq">${q.text}</div><p class="qremind">${q.remind}</p>
+      <div class="choice">${[1, 2].map(n => `<button type="button" data-n="${n}" class="${s.answer === n ? "sel" : ""}">Track ${n}<span class="claim">${q.text.replace(/^Which track /, "").replace(/\?$/, "")}</span></button>`).join("")}</div>
+      <div class="actions"><button type="button" class="btn" id="reveal">${s.revealed ? "Hide the answer key" : "Reveal"}</button><span class="small dim" id="ansnote">${s.answer ? "" : "You can also reveal without answering."}</span></div>
+    </div>
+    <div id="revealed"></div>`;
+  root.querySelectorAll(".qchoose button").forEach(b => b.onclick = () => { s.q = b.dataset.q; s.answer = null; stopAll(); players = []; renderExample(e); });
+  const ctx = root.querySelector("#ctx");
+  [["A", "Player A", e.A], ["B", "Player B", e.B], ["both", "Both together", "the duo"]].forEach(([k, lab, who]) => {
+    const el = makePlayer(e.audio[k], PAST, lab, who).el;
+    if (k === (s.q === "contA" ? "A" : "B")) { el.classList.add("qfocus", "q-" + s.q); el.insertAdjacentHTML("afterbegin", `<span class="qtag">the question is about this player</span>`); }
+    ctx.appendChild(el);
+  });
+  const tr = root.querySelector("#tracks");
+  [1, 2].forEach(n => {
+    const c = ord[n - 1], card = document.createElement("article"); card.className = "card";
+    card.innerHTML = `<div class="head"><span class="num">${n}</span>Track ${n}</div>`;
+    const pair = document.createElement("div"); pair.className = "pair";
+    const pa = makePlayer(e.audio[c].alone, FUT, "Track alone", "", { allNew: true, track: n, card });
+    const pd = makePlayer(e.audio[c].duo, PAST + FUT, "Duo, then the track", "track starts at 10 s", { seam: PAST, track: n, card });
+    pair.appendChild(pa.el); pair.appendChild(pd.el); card.appendChild(pair);
+    if (s.revealed) card.insertAdjacentHTML("beforeend", `<div class="reveal-tag" style="color:${c === "XA" ? "var(--qa)" : "var(--qb)"}">= ${c} · ${c === "XA" ? "built to continue A" : "built to listen and respond to B"}</div>`);
+    tr.appendChild(card);
+  });
+  root.querySelectorAll(".choice button").forEach(b => b.onclick = () => { s.answer = +b.dataset.n; renderAnswerState(e); });
+  root.querySelector("#reveal").onclick = () => { s.revealed = !s.revealed; stopAll(); players = []; renderExample(e); renderPicker(); if (s.revealed) document.getElementById("revealed").scrollIntoView({ block: "nearest" }); };
+  if (s.revealed) renderReveal(e);
+}
+function renderAnswerState(e) {
+  const s = stOf(e);
+  document.querySelectorAll("#example .choice button").forEach(b => b.classList.toggle("sel", +b.dataset.n === s.answer));
+  document.getElementById("ansnote").textContent = "";
+  if (s.revealed) renderReveal(e);
+}
+function pmusTable(e) {
+  const rows = [["Self", "XA − XB", "XA"], ["Partner", "XB − XA", "XB"], ["Partner+", "XB − XA", "XB"], ["Duo", "XA − XB", null]];
+  const cell = (L, m, want) => { const v = e.pmus[L][m]; const cls = want ? (v.prefers === want ? "pref-ok" : "pref-no") : "";
+    return `<td class="num">${v.XA.toFixed(3)}</td><td class="num">${v.XB.toFixed(3)}</td><td class="num">${sgn(v.diff)}</td><td class="${cls}">${v.prefers}</td>`; };
+  return `<div class="tw"><table><thead><tr><th rowspan="2">Measure</th><th rowspan="2">Δ</th><th colspan="4">5 s past (paper protocol)</th><th colspan="4">10 s past</th></tr>
+    <tr><th class="num">XA</th><th class="num">XB</th><th class="num">Δ</th><th>prefers</th><th class="num">XA</th><th class="num">XB</th><th class="num">Δ</th><th>prefers</th></tr></thead><tbody>
+    ${rows.map(([m, d, want]) => `<tr><td>${m}</td><td class="mono small">${d}</td>${cell("5", m, want)}${cell("10", m, want)}</tr>`).join("")}</tbody></table></div>
+    <p class="small dim">nats/token. Green: the measure prefers the track its relation was built into (Self: XA; Partner and Partner+: XB); red: the other track. Duo is a shared-context measure with no constructed target.</p>`;
+}
+function renderReveal(e) {
+  const s = stOf(e), ord = order[e.stem], el = document.getElementById("revealed"), q = Q[s.q];
+  const picked = s.answer ? ord[s.answer - 1] : null;
+  const verdict = picked ? `You chose Track ${s.answer} = <b>${picked}</b> under the ${q.short} question: <span class="${picked === q.target ? "ok" : "bad"}">${picked === q.target ? "as constructed" : "not as constructed"}</span> (the construction predicts ${q.target}).` : `No answer given. Under the ${q.short} question the construction predicts ${q.target}.`;
+  const L = e.listeners;
+  const lis = !L ? `<p class="small dim">Practice answers were not analysed.</p>` : `
+    <div class="kv"><dt>continue-A question</dt><dd><b>${frac(L.A_k, L.A_n)}</b> chose XA${pct(L.A_k, L.A_n)}</dd>
+      <dt>listen-to-B question</dt><dd><b>${frac(L.B_k, L.B_n)}</b> chose XB${pct(L.B_k, L.B_n)}</dd></div>
+    <div class="chips">${L.rows.map(r => `<span class="chip q-${r.q}" title="${esc(r.group)}">${r.L} · ${Q[r.q].short} → ${r.chose} <span class="${r.chose === Q[r.q].target ? "ok" : "bad"}">${r.chose === Q[r.q].target ? "✓" : "✗"}</span></span>`).join("")}</div>
+    <p class="small dim">Excluded listener not counted. ✓ = as constructed.</p>`;
+  el.innerHTML = `<div class="revealed">
+    <p>Track 1 = <b>${ord[0]}</b>, Track 2 = <b>${ord[1]}</b>.</p><p class="verdict">${verdict}</p>
+    <div class="sub">Construction</div>
+    <dl class="kv"><dt>Cue</dt><dd>${esc(e.family)}; the change near the end comes from <b>player ${e.change_from}</b></dd>
+      <dt>In the past</dt><dd>${esc(e.past)}</dd>
+      <dt style="color:var(--qa)">XA</dt><dd>${esc(e.xa)}</dd>
+      <dt style="color:var(--qb)">XB</dt><dd>${esc(e.xb)}</dd>
+      <dt>Item type</dt><dd>${esc(e.kind_text)}</dd>
+      ${e.note && e.ex !== 2 && e.ex !== 0 ? `<dt>Note</dt><dd>${esc(e.note)}</dd>` : ""}</dl>
+    <div class="sub">PMus scores</div>${pmusTable(e)}
+    <div class="sub">Listeners</div>${lis}</div>`;
+}
+document.addEventListener("keydown", ev => {
+  if (!cur || ev.target.tagName === "INPUT" || ev.target.tagName === "TEXTAREA") return;
+  const r = document.getElementById("try").getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return;
+  if (ev.key === " ") { if (players.some(p => !p.audio.paused)) { ev.preventDefault(); stopAll(); } return; }
+  const k = parseInt(ev.key, 10);
+  if (k === 1 || k === 2) { const els = [...document.querySelectorAll("#tracks .card")][k - 1]; const p = els && players.find(x => x.el === els.querySelectorAll(".pl")[1]); if (p) { ev.preventDefault(); p.play(); } }
+});
+
+// ---------- results tables
+function overall() {
+  const T = DATA.totals, row = (lab, t, cls = "") => `<tr class="${cls}"><td>${lab}</td><td class="num">${t.n_listeners}</td><td class="num">${frac(t.A_k, t.A_n)}${pct(t.A_k, t.A_n)}</td><td class="num">${frac(t.B_k, t.B_n)}${pct(t.B_k, t.B_n)}</td><td class="num">${frac(t.m_k, t.m_n)}${pct(t.m_k, t.m_n)}</td></tr>`;
+  document.getElementById("t-overall").innerHTML = `<thead><tr><th>Group</th><th class="num">listeners</th><th class="num">continue-A question: chose XA</th><th class="num">listen-to-B question: chose XB</th><th class="num">matched</th></tr></thead><tbody>
+    ${row("Colleagues", T.main.colleague)}${row("Online panel", T.main["online panel"])}${row("All (main analysis)", T.main.all, "total")}
+    <tr class="muted"><td colspan="5" class="small">With the excluded listener included:</td></tr>
+    ${row("Colleagues, incl. excluded", T.with_excluded.colleague, "muted")}${row("All, incl. excluded", T.with_excluded.all, "muted")}</tbody>`;
+}
+function listenersTable() {
+  const r = l => `<tr class="${l.excluded ? "muted" : ""}"><td>${l.excluded ? "excluded" : l.L}</td><td>${l.group}</td><td class="num">${frac(l.A_k, l.A_n)}</td><td class="num">${frac(l.B_k, l.B_n)}</td><td class="num">${frac(l.m_k, l.m_n)}</td><td class="num">${sgn(l.gap, 1)}</td></tr>`;
+  document.getElementById("t-listeners").innerHTML = `<thead><tr><th>Listener</th><th>Group</th><th class="num">continue-A: chose XA</th><th class="num">listen-to-B: chose XB</th><th class="num">matched</th><th class="num">gap</th></tr></thead><tbody>${DATA.listeners.map(r).join("")}</tbody>`;
+}
+function examplesTable() {
+  const rows = EX.filter(e => e.ex).map(e => { const L = e.listeners, p = e.pmus["5"];
+    return `<tr><td><a href="#${e.stem}" data-stem="${e.stem}">${e.ex}</a></td><td>${esc(e.A)} / ${esc(e.B)}</td><td>${esc(e.family)} (${e.change_from})</td><td>${e.kind}</td>
+      <td class="num">${sgn(p.Self.diff)}</td><td class="num">${sgn(p.Partner.diff)}</td>
+      <td class="num">${L.A_n ? frac(L.A_k, L.A_n) : "–"}</td><td class="num">${L.B_n ? frac(L.B_k, L.B_n) : "–"}</td><td class="num">${frac(L.m_k, L.m_n)}</td></tr>`; }).join("");
+  document.getElementById("t-examples").innerHTML = `<thead><tr><th>Ex.</th><th>Player A / Player B</th><th>Cue (from)</th><th>Item type</th><th class="num">ΔSelf</th><th class="num">ΔPartner</th><th class="num">continue-A: chose XA</th><th class="num">listen-to-B: chose XB</th><th class="num">matched</th></tr></thead><tbody>${rows}</tbody>`;
+  document.querySelectorAll("#t-examples a").forEach(a => a.onclick = ev => { ev.preventDefault(); show(EX.find(e => e.stem === a.dataset.stem), true); });
+}
+function statsTable() {
+  const S = DATA.stats;
+  const rows = [
+    ["Mean per-listener gap", "", ["colleague", "online panel", "all"].map(g => sgn(S.mean_gap[g], 2))],
+    ["Bayes factor, gap > 0 (one-sided default t-test on per-listener gaps, Cauchy prior scale 0.707, evidence threshold 6, looks planned at 16/24/32 listeners)", "planned", ["colleague", "online panel", "all"].map(g => S.bf[g].toFixed(1))],
+    ["Two-part mixture model: evidence that answers depend on the question, in either direction (Bayes factor vs. no listener affected)", "post", ["7,445", "10.1", "117,479"]],
+    ["Mixture model: evidence that affected listeners mostly go in the constructed direction (Bayes factor vs. half each way)", "post", ["4.5", "0.8", "3.2"]],
+    ["Mixture model: estimated share of affected listeners in the constructed direction (posterior mean, 90% interval)", "post", ["81% (50–98%)", "54% (12–90%)", "76% (48–96%)"]],
+  ];
+  const tag = t => t === "planned" ? `<span class="tag-s planned">planned test</span>` : t === "post" ? `<span class="tag-s post">added after seeing the data</span>` : "";
+  document.getElementById("t-stats").innerHTML = `<thead><tr><th>Statistic</th><th>Status</th><th class="num">colleagues (4)</th><th class="num">online panel (4)</th><th class="num">all (8)</th></tr></thead><tbody>
+    ${rows.map(([a, t, v]) => `<tr><td>${a}</td><td>${tag(t)}</td>${v.map(x => `<td class="num">${x}</td>`).join("")}</tr>`).join("")}</tbody>`;
+  document.getElementById("stats-note").innerHTML = `The planned test is defined on all listeners; the per-group values are descriptive, and none of the three is at a planned look (the first is at 16 listeners), so none is a stopping decision. With the excluded listener included, the same Bayes factor is ${S.bf_with_excluded.colleague.toFixed(1)} for the 5 colleagues and ${S.bf_with_excluded.all.toFixed(1)} for all 9. Mixture model: each listener either answers independently of the question (one probability of choosing XA) or is affected (a separate probability per question, uniform priors); the share of affected listeners and, among them, the share in the constructed direction have uniform priors. The colleague/panel split was also made after seeing the data.`;
+}
+function pmusClaim() {
+  const ok = (L, m, want) => EX.every(e => e.pmus[L][m].prefers === want);
+  const all = ok("5", "Self", "XA") && ok("10", "Self", "XA") && ok("5", "Partner", "XB") && ok("10", "Partner", "XB");
+  const duo = ok("5", "Duo", "XA") && ok("10", "Duo", "XA");
+  document.getElementById("pmus-claim").textContent = all
+    ? `For every example on this page (including the practice example), PMus-Self prefers XA and PMus-Partner prefers XB, both with the full 10 s past and with the 5 s past used in the paper's protocol. PMus-Duo, a shared-context measure, prefers XA on all of them${duo ? "" : " (check)"}. The question is whether listeners split the same way when asked about the two relations.`
+    : "(PMus summary unavailable)";
+}
+
+overall(); listenersTable(); examplesTable(); statsTable(); pmusClaim();
+const fromHash = EX.find(e => "#" + e.stem === location.hash);
+show(fromHash || EX.find(e => e.ex === 0), !!fromHash);
+window.addEventListener("hashchange", () => { const e = EX.find(x => "#" + x.stem === location.hash); if (e && e !== cur) show(e, true); });
+</script>
+</body></html>
