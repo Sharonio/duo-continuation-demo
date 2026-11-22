@@ -52,6 +52,7 @@ table th.num{white-space:normal;font-family:inherit;vertical-align:bottom}
 .sm{display:none}
 th.ctr,td.ctr{text-align:center}
 tr.total td{font-weight:700;border-top:2px solid var(--line2)}
+tr.pct td{font-weight:700}
 th.qa{color:var(--qa)}th.qb{color:var(--qb)}
 td.hi{font-weight:700}
 td.ins{white-space:nowrap}td.ins .b{color:var(--dim)}
@@ -190,6 +191,7 @@ const EX = DATA.examples;
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const sgn = (x, d) => x == null ? "–" : (x > 0 ? "+" : x < 0 ? "−" : "") + Math.abs(x).toFixed(d);
 const frac = (k, n) => n ? `${k}/${n}` : "–";
+const pc = (k, n) => n ? `${Math.round(100 * k / n)}%` : "–";
 const num3 = x => (x < 0 ? "−" : "") + Math.abs(x).toFixed(3);
 const XA = 'X<sub>A</sub>', XB = 'X<sub>B</sub>';
 
@@ -332,7 +334,8 @@ function resultTables(ids, Ls, T, exTally) {
   const cells = r => `<td class="num">${frac(r.self_k, r.n_A)}</td><td class="num">${frac(r.partner_k, r.n_B)}</td><td class="num">${frac(r.m_k, r.m_n)}</td>`;
   const head = (first, time) => `<thead><tr><th>${first}</th><th class="num qa">agreed with PMus-Self<span class="hs">“continue A” answers</span></th><th class="num qb">agreed with PMus-Partner<span class="hs">“listen to B” answers</span></th><th class="num">overall</th>${time ? '<th class="num">mean time per example</th>' : ""}</tr></thead>`;
   document.getElementById(ids[0]).innerHTML = head('<span class="lg">Participant</span><span class="sm">#</span>', true) + `<tbody>${Ls.map(l => `<tr><td>${l.L}</td>${cells(l)}<td class="num">${Math.round(l.secs)} s</td></tr>`).join("")}
-    <tr class="total"><td>All</td>${cells(T)}<td class="num">${Math.round(T.secs)} s</td></tr></tbody>`;
+    <tr class="total"><td>All</td>${cells(T)}<td class="num">${Math.round(T.secs)} s</td></tr>
+    <tr class="pct"><td>%</td><td class="num">${pc(T.self_k, T.n_A)}</td><td class="num">${pc(T.partner_k, T.n_B)}</td><td class="num">${pc(T.m_k, T.m_n)}</td><td></td></tr></tbody>`;
   const byAgreement = [...EX].sort((a, b) => exTally(b).m_k / exTally(b).m_n - exTally(a).m_k / exTally(a).m_n || a.ex - b.ex);
   document.getElementById(ids[1]).innerHTML = head("Example", false) + `<tbody>${byAgreement.map(e => `<tr><td>${e.ex}</td>${cells(exTally(e))}</tr>`).join("")}</tbody>`;
 }
